@@ -1,16 +1,59 @@
 * {
+    font-size: 100%;
     color: #FFFFFF
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     background-color: #0071BD;
-    height: 15vh;
+    height: 15vmax;
+}
+
+nav {
+    display: none;
+    background-color: rgb(129, 184, 223);
+    align-items: center;
+    justify-content: space-evenly;
+    width: auto;
+    height: 50px;
+    margin-left: auto;
+}
+
+ul {
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+li {
+    list-style-type: none;
+    padding: 15px;
+}
+
+.mainSection {
+    padding-bottom: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 1vmax;
+}
+
+.mainSection .boxContainer {
+    flex: 1;
 }
 
 footer {
     background-color: #662E91;
-    height: 15vh;
-    margin-top: 10px;
+    height: auto;
+    margin-top: auto;
+    padding: 20px;
 }
 
 header,
@@ -38,7 +81,6 @@ footer .container {
     flex-wrap: wrap;
     height: auto;
     gap: 10px 0px;
-    padding-top: 5px;
 }
 
 .yellowBox,
@@ -46,7 +88,7 @@ footer .container {
 .redBox,
 .footerBox {
     width: 100%;
-    height: 40px;
+    height: 13vmax;
     margin-top: auto;
     display: flex;
     align-items: center;
@@ -69,6 +111,14 @@ footer .container {
     background-color: #B296C7;
 }
 
+.footerBox:nth-child(1) {
+    display: none;
+}
+
+.footerBox:nth-child(2) {
+    display: none;
+}
+
 aside {
     background-color: #01A89E;
     margin-top: auto;
@@ -76,5 +126,125 @@ aside {
     align-items: center;
     justify-content: center;
 
-    height: 80px;
+    height: 20vmax;
+}
+
+@media (min-width: 576px) and (max-width: 1400px) {
+
+    header {
+        height: 8vh;
+    }
+
+    .orangeBox {
+        display: none;
+    }
+
+    .yellowBox,
+    .orangeBox,
+    .redBox {
+        width: 49%;
+        height: 17.5vmax;
+    }
+
+    aside {
+        height: 17.5vmax;
+    }
+
+    .boxContainer {
+        flex-direction: column;
+    }
+
+    .container .boxContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1vh 0px;
+    }
+
+    footer .boxContainer {
+        justify-content: space-between;
+    }
+
+    .footerBox {
+        height: 5vmax;
+    }
+
+    .footerBox:nth-child(1) {
+        display: flex;
+        width: 49%;
+    }
+
+    .footerBox:nth-child(2) {
+        display: flex;
+        width: 49%;
+    }
+}
+
+@media (min-width: 1400px) {
+    nav{
+        display: flex;
+    }
+
+    .menuButton{
+        margin-left: 10px;
+    }
+
+    header {
+        height: 8vh;
+    }
+
+    .yellowBox,
+    .orangeBox,
+    .redBox {
+        height: 14vmax;
+    }
+
+    .yellowBox {
+        width: 24%;
+    }
+
+    .orangeBox {
+        width: 32.5%;
+    }
+
+    .redBox {
+        width: 49.4%;
+    }
+
+    .boxContainer {
+        flex-direction: row;
+    }
+
+    .container .boxContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1.5vh 0px;
+    }
+
+    footer .boxContainer {
+        justify-content: space-between;
+    }
+
+    .footerBox {
+        height: 5vmax;
+    }
+
+    aside {
+        margin-top: 0px;
+        margin-left: 1vmax;
+        flex: 0.25;
+        height: auto;
+    }
+
+    .footerBox {
+        display: flex;
+        width: 32.5%;
+    }
+
+    .footerBox:nth-child(1) {
+        display: flex;
+    }
+
+    .footerBox:nth-child(2) {
+        display: flex;
+    }
 }
